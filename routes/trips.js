@@ -3,8 +3,9 @@ const router = express.Router();
 const tripsCtrl = require('../controllers/trips')
 
 
-//localhost:3000/trips
-router.get('/', tripsCtrl.new);
+//localhost:3000/
+router.get('/countries/:id/trips/new', tripsCtrl.new);
+router.post('/countries/:id/trips/new', tripsCtrl.create)
 
 
 module.exports = router;

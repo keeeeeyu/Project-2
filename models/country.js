@@ -10,7 +10,7 @@ const tripSchema = new Schema({
         ' November', 'December']
     },
     restaurant: {type: String},
-    Hotel: {type: String},
+    hotel: {type: String},
     tip: {type: String},
     like: {type: Number},
     user: {type: Schema.Types.ObjectId, ref: 'User'},
