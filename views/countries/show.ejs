@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>  
     <h1>Tips!</h1>
     <div>
+        <div>Posted by: <%= user.name %> </div>
         <% countries.trip.forEach(t => { %>
-            <div>Posted by: <%= t.user %> </div>
             <div>City: <%= t.city %></div>
             <div>Month: <%= t.month %> </div>
             <div>Restaurant: <%= t.restaurant %> </div>

@@ -1,4 +1,5 @@
 const Country = require('../models/country');
+const User = require('../models/user')
 
 module.exports = {
     new: newTrip,
@@ -11,6 +12,7 @@ function newTrip(req, res) {
             countries
         })
     })
+    console.log(req.user)
 }
 
 function create(req, res) {
