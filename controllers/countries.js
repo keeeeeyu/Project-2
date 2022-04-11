@@ -44,12 +44,10 @@ function create(req, res) {
 // }
 
 function show(req, res) {
-    Country.findById(req.params.id), function(err, countries) {
-        console.log(req.params.id, '-------------------')
-        // res.render('countries/show', {
-        //     countries
-        // })
-        console.log(country)
-    }
-    res.send('show page')
+    Country.findById(req.params.id, function(err, countries) {
+        res.render('countries/show', {
+            countries
+        })
+    })
+    
 }

@@ -7,11 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <% if (user) { %>
-        <a href="/logout">LOG OUT</a>
-    <% } else { %>
-        <a href="/auth/google" class="login"> LOG IN </a>
-    <% } %>
+    <nav>
+        <% if (user) { %>
+            <a href="/logout">LOG OUT</a>
+        <% } else { %>
+            <a href="/auth/google" class="login"> LOG IN </a>
+        <% } %>
+    </nav>
     <form method="POST" action="/countries">
         <div><% countries.forEach(c => { %>
             <div><%= c.country %></div>
@@ -21,7 +23,5 @@
         <!-- <input type="text" name="country" autocomplete="off"> -->
         <!-- <input type="submit" value="Add New Country"> -->
     </form>
-    <script>
-    </script>
 </body>
 </html>

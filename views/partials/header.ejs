@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title><%= title %> </title>
 </head>
 <body>
     <nav>
-        <% if (user) { %> 
-            
+        <% if (user) { %>
+            <a href="/logout">LOG OUT</a>
+            <a href="/trips/new">Add New Trip</a>
+        <% } else { %>
+            <a href="/auth/google" class="login"> LOG IN </a>
+        <% } %>
     </nav>
     
 </body>
