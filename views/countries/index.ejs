@@ -7,7 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/auth/google" class="login"> LOG IN </a>
+    <% if (user) { %>
+        <a href="/logout">LOG OUT</a>
+    <% } else { %>
+        <a href="/auth/google" class="login"> LOG IN </a>
+    <% } %>
     <form method="POST" action="/countries">
         <div><% countries.forEach(c => { %>
             <div><%= c.country %></div>
