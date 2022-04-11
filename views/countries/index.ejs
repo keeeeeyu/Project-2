@@ -7,16 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/auto/google" class="login"> LOG IN </a>
+    <a href="/auth/google" class="login"> LOG IN </a>
     <form method="POST" action="/countries">
-        <select>
-            <% countries.forEach(c => { %>
-                
-                <option value="<%= c.country %>"> <%= c.country %> </option>
-            <% }) %>
-            
-        </select>
-        <a href="/countries/<%= countries._id %>">Details</a>
+        <div><% countries.forEach(c => { %>
+            <div><%= c.country %></div>
+            <div><a href="/countries/<%= c._id %>">Open Tips</a></div>
+        <% }) %>
+        </div>
         <!-- <input type="text" name="country" autocomplete="off"> -->
         <!-- <input type="submit" value="Add New Country"> -->
     </form>

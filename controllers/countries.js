@@ -5,7 +5,8 @@ const Country = require('../models/country');
 module.exports = {
     index,
     create,
-    show
+    show,
+    new: newCountries
 }
 
 
@@ -19,6 +20,9 @@ function index(req, res) {
 
 };
 
+function newCountries(req, res) {
+    res.render('/countries/index')
+}
 
 function create(req, res) {
     const country = new Country(req.body);
@@ -40,11 +44,12 @@ function create(req, res) {
 // }
 
 function show(req, res) {
-    Country.findById(req.params.id), function(err, country) {
+    Country.findById(req.params.id), function(err, countries) {
         console.log(req.params.id, '-------------------')
-        res.render('countries/show', {
-            country
-        })
+        // res.render('countries/show', {
+        //     countries
+        // })
         console.log(country)
     }
+    res.send('show page')
 }
