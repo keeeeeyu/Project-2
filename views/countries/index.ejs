@@ -11,15 +11,16 @@
     <form method="POST" action="/countries">
         <select>
             <% countries.forEach(c => { %>
-                <option value="<%= c.country %>"><%= c.country %> </option>
-                <a href="/countries/:id">details</a>
+                
+                <option value="<%= c.country %>"> <%= c.country %> </option>
             <% }) %>
             
-            
         </select>
-        <a href="/countries/:id">details</a>
+        <a href="/countries/<%= countries._id %>">Details</a>
         <!-- <input type="text" name="country" autocomplete="off"> -->
         <!-- <input type="submit" value="Add New Country"> -->
     </form>
+    <script>
+    </script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+const country = require('../models/country');
 const Country = require('../models/country');
 
 
@@ -11,12 +12,13 @@ module.exports = {
 
 function index(req, res) {
     Country.find({}, function(err, countries) {
-       console.log(countries, '<-------------')
         res.render('countries/index', {
             countries
         })
     })
+
 };
+
 
 function create(req, res) {
     const country = new Country(req.body);
@@ -28,8 +30,18 @@ function create(req, res) {
   
 }
 
+// function show(req, res) {
+//     Country.findById(req.params.id), function(err, countryDoc) {
+//         countryDoc.country.push(req.body.countryId);
+//         country.save(function(err) {
+//             res.redirect(`/countries/${countryDoc}`)
+//         })
+//     }
+// }
+
 function show(req, res) {
     Country.findById(req.params.id), function(err, country) {
+        console.log(req.params.id, '-------------------')
         res.render('countries/show', {
             country
         })
