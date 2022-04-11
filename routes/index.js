@@ -1,4 +1,5 @@
-var router = require('express').Router();
+const express = require('express')
+const router = express.Router();
 const passport = require('passport');
 
 // The root route renders our only view
@@ -7,6 +8,7 @@ router.get('/', function(req, res) {
   // in the student demo this was res.redirect('/students'), what do you want?
   // This could be a landing page, or just redirect to your main resource page which you'll have an a tag that makes 
   // a request to `/auth/google` route below
+  res.redirect('/countries')
 });
 
 // Google OAuth login route
@@ -27,7 +29,7 @@ router.get('/oauth2callback', passport.authenticate(
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/countries');
 });
 
 module.exports = router;
