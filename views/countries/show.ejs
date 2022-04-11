@@ -1,6 +1,13 @@
 <%- include('../partials/header') %>  
     <h1>Tips!</h1>
     <div>
-        <div>city: </div>
+        <% countries.trip.forEach(t => { %>
+            <div>Posted by: <%= t.user %> </div>
+            <div>City: <%= t.city %></div>
+            <div>Month: <%= t.month %> </div>
+            <div>Restaurant: <%= t.restaurant %> </div>
+            <div>Hotel: <%= t.hotel %> </div>
+            <div>Tips: <%= t.tip %> </div>
+        <% }) %>
     </div>
 <%- include('../partials/footer') %> 

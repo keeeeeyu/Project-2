@@ -10,7 +10,7 @@
     <nav>
         <% if (user) { %>
             <a href="/logout">LOG OUT</a>
-            <a href="/trips/new">Add New Trip</a>
+            <a href="/countries/<%= countries._id %>/trips/new">Add New Trip</a>
         <% } else { %>
             <a href="/auth/google" class="login"> LOG IN </a>
         <% } %>
