@@ -6,7 +6,8 @@ module.exports = {
     index,
     create,
     show,
-    new: newCountries
+    new: newCountries,
+    search
 }
 
 
@@ -43,10 +44,19 @@ function create(req, res) {
 // }
 
 function show(req, res) {
-    Country.findById(req.params.id, function(err, countries) {
+    console.log(req.body)
+    Country.findById(req.params.id, function(err, country) {
         res.render('countries/show', {
-            countries
+            country
         })
     })
 
+}
+
+function search(req, res) {
+    Country.findOne({'country': req.body.country}, function(err, country) {
+        res.render(`countries/show`, {
+            country
+        })
+    })
 }

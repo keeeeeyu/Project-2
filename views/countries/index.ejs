@@ -14,12 +14,14 @@
             <a href="/auth/google" class="login"> LOG IN </a>
         <% } %>
     </nav>
-    <form method="POST" action="/countries">
-        <div><% countries.forEach(c => { %>
-            <div><%= c.country %></div>
-            <div><a href="/countries/<%= c._id %>">Open Tips</a></div>
-        <% }) %>
-        </div>
+    <form method="POST" action="/countries/show">
+        <select name="country" onchange="this.form.submit()">
+            <option value="null">Select Country</option>
+            <% countries.forEach(c => { %>
+                <option value="<%= c.country %>"> <%= c.country %> </option>
+            <% }) %>
+        
+        </select>
         <!-- <input type="text" name="country" autocomplete="off"> -->
         <!-- <input type="submit" value="Add New Country"> -->
     </form>

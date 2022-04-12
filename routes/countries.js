@@ -8,7 +8,7 @@ router.get('/', countriesCtrl.index);
 router.get('/', countriesCtrl.new)
 router.post('/', countriesCtrl.create);
 router.get('/:id', countriesCtrl.show);
-
+router.post('/show', countriesCtrl.search);
 
 
 
