@@ -8,5 +8,6 @@ const isLoggedIn = require('../config/auth');
 router.get('/countries/:id/trips/new', isLoggedIn, tripsCtrl.new);
 router.post('/countries/:id/trips/new', tripsCtrl.create);
 router.delete('/trips/:id', tripsCtrl.delete);
+router.get('/trips/:id/edit', tripsCtrl.edit);
 
 module.exports = router;

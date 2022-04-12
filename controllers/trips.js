@@ -4,7 +4,8 @@ const Country = require('../models/country');
 module.exports = {
     new: newTrip,
     create,
-    delete: deleteTrip
+    delete: deleteTrip,
+    edit
 }
 
 function newTrip(req, res) {
@@ -42,4 +43,8 @@ function deleteTrip(req, res, next) {
             res.redirect(`/countries/${countryDoc._id}`)
         })
     })
+}
+
+function edit(req, res) {
+    res.send('trips/edit')
 }

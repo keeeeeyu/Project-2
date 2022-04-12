@@ -17,7 +17,6 @@ function index(req, res) {
             countries
         })
     })
-    console.log(req.user)
 };
 
 function newCountries(req, res) {
