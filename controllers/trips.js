@@ -45,8 +45,9 @@ function deleteTrip(req, res, next) {
 }
 
 function edit(req, res) {
-    Country.findById(req.params.id, function(err, country) {
-        if(!country.user.equals(req.user._id)) return res.redirect('/countries');
-        res.render('trips/edit', {country});
+    Country.findById(req.params.id, function(err, countries) {
+        res.render('trips/edit', {
+            countries
+        });
     })
 }
