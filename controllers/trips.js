@@ -5,7 +5,8 @@ module.exports = {
     new: newTrip,
     create,
     delete: deleteTrip,
-    edit
+    edit,
+    update
 }
 
 function newTrip(req, res) {
@@ -14,7 +15,7 @@ function newTrip(req, res) {
             countries
         })
     })
-    console.log(req.user)
+
 }
 
 function create(req, res) {
@@ -45,9 +46,28 @@ function deleteTrip(req, res, next) {
 }
 
 function edit(req, res) {
-    Country.findById(req.params.id, function(err, countries) {
+    Country.findById(req.params.id, function(err, trip) {
         res.render('trips/edit', {
-            countries
+            trip
         });
+        console.log(trip,'<-----------trip')
+        console.log(req.params.id, '<--------------------id')
+    })
+}
+
+function update(req, res) {
+    Country.findOne({'trip._id': req.params.id}, function(err, tripDoc) {
+        const trip = tripDoc.trip.id(req.params.id);
+        if(!trip.user.equals(req.user._id)) return res.redirect(`countries/${tripDoc._id}`)
+
+        tripDoc.city = req.body.city;
+        tripDoc.month = req.body.month;
+        tripDoc.restaurant = req.body.restaurant;
+        tripDoc.hotel = req.body.hotel;
+        tripDoc.tip = req.body.tip;
+
+        trip.save(function(err) {
+            res.redirect(`countries/${trip._id}`);
+        })
     })
 }

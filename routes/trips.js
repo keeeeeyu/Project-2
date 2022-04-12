@@ -9,5 +9,6 @@ router.get('/countries/:id/trips/new', isLoggedIn, tripsCtrl.new);
 router.post('/countries/:id/trips/new', tripsCtrl.create);
 router.delete('/trips/:id', tripsCtrl.delete);
 router.get('/trips/:id/edit', tripsCtrl.edit);
+router.put('/trips/:id', tripsCtrl.update);
 
 module.exports = router;
