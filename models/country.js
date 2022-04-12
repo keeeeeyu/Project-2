@@ -5,9 +5,6 @@ const tripSchema = new Schema({
     city: {type: String},
     month: {
         type: String,
-        enum: ['January', 'February', 'March', 'April',
-        'May', 'June', 'July', 'August', 'September', 'October',
-        ' November', 'December']
     },
     restaurant: {type: String},
     hotel: {type: String},
@@ -20,7 +17,7 @@ const tripSchema = new Schema({
 
 const countrySchema = new Schema({
     country: {type: String},
-    trip: [tripSchema]
+    trip: [tripSchema],
 })
 
 

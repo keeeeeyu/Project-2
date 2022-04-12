@@ -1,13 +1,21 @@
 <%- include('../partials/header') %>  
     <h1>Tips!</h1>
     <div>
-        <div>Posted by: <%= user.name %> </div>
         <% countries.trip.forEach(t => { %>
+            <div>Posted by: <%= t.userName %> </div>
             <div>City: <%= t.city %></div>
             <div>Month: <%= t.month %> </div>
             <div>Restaurant: <%= t.restaurant %> </div>
             <div>Hotel: <%= t.hotel %> </div>
             <div>Tips: <%= t.tip %> </div>
+            <div>
+                <% if (user && user._id.equals(t.user)) { %>
+                    <form action="/trips/<%= t._id %>?_method=DELETE" method="POST">
+                        <button type="submit">DELETE POST</button>
+                    </form>
+                <% } %>     
+            </div>
         <% }) %>
     </div>
+        
 <%- include('../partials/footer') %> 
