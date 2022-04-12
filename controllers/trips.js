@@ -33,7 +33,6 @@ function create(req, res) {
 function deleteTrip(req, res, next) {
     Country.findOne({'trip._id': req.params.id}, function(err, countryDoc) {
         const trip = countryDoc.trip.id(req.params.id);
-        console.log(trip,'<---------this is trip---------')
         if(!trip.user.equals(req.user._id)) return res.redirect(`/countries/${countryDoc._id}`)
 
         trip.remove()
@@ -46,5 +45,8 @@ function deleteTrip(req, res, next) {
 }
 
 function edit(req, res) {
-    res.send('trips/edit')
+    Country.findById(req.params.id, function(err, country) {
+        if(!country.user.equals(req.user._id)) return res.redirect('/countries');
+        res.render('trips/edit', {country});
+    })
 }
