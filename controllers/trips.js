@@ -46,7 +46,8 @@ function deleteTrip(req, res, next) {
 }
 
 function edit(req, res) {
-    Country.findById(req.params.id, function(err, trip) {
+    console.log(req.params.id)
+    Country.findOne({'trip._id': req.params.id}, function(err, trip) {
         res.render('trips/edit', {
             trip
         });

@@ -48,5 +48,5 @@ function show(req, res) {
             countries
         })
     })
-    console.log(req.user)
+
 }
