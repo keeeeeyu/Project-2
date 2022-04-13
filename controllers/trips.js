@@ -10,9 +10,9 @@ module.exports = {
 }
 
 function newTrip(req, res) {
-    Country.findById(req.params.id, function(err, countries) {
+    Country.findById(req.params.id, function(err, country) {
         res.render('trips/new', {
-            countries
+            country
         })
     })
 
@@ -45,14 +45,21 @@ function deleteTrip(req, res, next) {
     })
 }
 
+// function edit(req, res) {
+//     console.log(req.params.id)
+//     Country.findOne({'trip._id': req.params.id}, function(err, trip) {
+//         res.render('trips/edit', {
+//             trip
+//         })
+//     })
+// }
+
 function edit(req, res) {
-    console.log(req.params.id)
-    Country.findOne({'trip._id': req.params.id}, function(err, trip) {
+    Country.findOne({'trip._id': req.params.id}, function(err, country) {
+        const trip = country.trip.id(req.params.id);
         res.render('trips/edit', {
             trip
-        });
-        console.log(trip,'<-----------trip')
-        console.log(req.params.id, '<--------------------id')
+        })
     })
 }
 
@@ -61,14 +68,27 @@ function update(req, res) {
         const trip = tripDoc.trip.id(req.params.id);
         if(!trip.user.equals(req.user._id)) return res.redirect(`countries/${tripDoc._id}`)
 
-        tripDoc.city = req.body.city;
-        tripDoc.month = req.body.month;
-        tripDoc.restaurant = req.body.restaurant;
-        tripDoc.hotel = req.body.hotel;
-        tripDoc.tip = req.body.tip;
+        trip.city = req.body.city;
+        trip.month = req.body.month;
+        trip.restaurant = req.body.restaurant;
+        trip.hotel = req.body.hotel;
+        trip.tip = req.body.tip;
 
-        trip.save(function(err) {
-            res.redirect(`countries/${trip._id}`);
+        tripDoc.save(function(err) {
+            res.redirect(`/countries/${tripDoc._id}`);
         })
+        console.log(trip.city,'<---------trip')
     })
 }
+
+// function edit(req, res) {
+//     Country.findOne({'trip._id': req.params.id}, function(err, trip) {
+//         Country.findOne({'country_.id': req.params.id}, function(err, country) {
+//             res.render('trips/edit', {
+//                 trip,
+//                 country
+//             })
+//         })
+//     })
+    
+// }

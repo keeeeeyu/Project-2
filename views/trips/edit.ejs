@@ -1,6 +1,23 @@
-<%- include('../partials/header') %> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <% if (user) { %>
+            <a href="/logout">LOG OUT</a>
+        <% } else { %>
+            <a href="/auth/google" class="login"> LOG IN </a>
+        <% } %>
+    </nav>
+</body>
+</html>
 <h2>trip new page</h1>
-    
+    <form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
         <label>City: 
             <input type="text" name="city" autocomplete="off">
         </label><br>
@@ -29,7 +46,6 @@
         <label>Trip Tips: 
             <textarea name="tip"></textarea>
         </label><br>
-    <form action="/countries/<%= trip._id %>?_method=PUT" method="POST">
         <input type="submit" value="EDIT POST">
     </form>
 <%- include('../partials/footer') %> 
