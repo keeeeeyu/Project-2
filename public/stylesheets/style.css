@@ -67,23 +67,19 @@ h1 {
   font-size: 20px;
 }
 
-.brand-logo {
-  margin-left: 15px;
+label {
+  width: 100px;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
 }
 
-.card .card-content .card-title {
-  margin-bottom: 10px;
+.tip-text {
+  vertical-align: top;
 }
 
-#search-row form {
-  padding-top: 20px;
-}
-
-.student-name {
-  position: relative;
-  top: -5px;
-}
-
-.collection-item form {
-  margin-top: -5px;
+#add-btn {
+  margin: 10px;
+  align-content: center;
+  width: 250px;
 }
