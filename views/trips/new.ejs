@@ -1,35 +1,32 @@
 <%- include('../partials/header') %>
-<h1>trip new page</h1>
+<h1 style="text-align: center;">Share Your Travel Tips!</h1>
     <form action="/countries/<%= country._id %>/trips/new" method="POST">
-        <label>City: 
-            <input type="text" name="city" autocomplete="off">
-        </label><br>
-        <label>Month: 
-            <select name="month">
-                <option value="January">January</option>
-                <option value="February">February</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <option value="September">September</option>
-                <option value="October">October</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
-            </select>
-        </label><br>
-        <label>Restaurant: 
-            <input type="text" name="restaurant" autocomplete="off">
-        </label><br>
-        <label>Hotel: 
-            <input type="text" name="hotel" autocomplete="off">
-        </label><br>
-        <label>Trip Tips: 
-            <textarea name="tip"></textarea>
-        </label><br>
+        <div class="container-fluid">
+        <label>City: </label>
+        <input type="text" name="city" autocomplete="off">
+        <label>Month: </label>
+        <select name="month">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+        <label>Restaurant: </label>
+        <input type="text" name="restaurant" autocomplete="off">
+        <label>Hotel: </label>
+        <input type="text" name="hotel" autocomplete="off">
+        <label>Trip Tips: </label>
+        <textarea name="tip"></textarea>
         <input type="submit" value="Add New Tip">
+        </div>
     </form>
 </div>
 <%- include('../partials/footer') %> 
