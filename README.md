@@ -19,7 +19,8 @@ https://whimsical.com/project-2-wireframe-WfdAEA7nCyVABjRtAAjsj8
 ## Technologies Used:  
 Node.js | Express | Mongoose | MongoDB | EJS | Passport | Bootstrab | CSS | JavaScript.
 
+https://travel-tipskee.herokuapp.com/
+
 ## Things to imporve.  
 1. Feature that user can upload pictures.
 2. Features that other users can add likes and add comments.
-3. 
