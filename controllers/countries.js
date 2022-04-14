@@ -6,7 +6,6 @@ module.exports = {
     index,
     create,
     show,
-    new: newCountries,
     search
 }
 
@@ -20,9 +19,6 @@ function index(req, res) {
     })
 };
 
-function newCountries(req, res) {
-    res.render('/countries/index')
-}
 
 function create(req, res) {
     const country = new Country(req.body);
@@ -34,14 +30,6 @@ function create(req, res) {
   
 }
 
-// function show(req, res) {
-//     Country.findById(req.params.id), function(err, countryDoc) {
-//         countryDoc.country.push(req.body.countryId);
-//         country.save(function(err) {
-//             res.redirect(`/countries/${countryDoc}`)
-//         })
-//     }
-// }
 
 function show(req, res) {
     console.log(req.body)

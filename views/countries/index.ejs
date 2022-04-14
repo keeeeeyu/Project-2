@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <nav>
-        <% if (user) { %>
-            <a href="/logout">LOG OUT</a>
-        <% } else { %>
-            <a href="/auth/google" class="login"> LOG IN </a>
-        <% } %>
-    </nav>
-    <form method="POST" action="/countries/show">
-        <select name="country" onchange="this.form.submit()">
-            <option value="null">Select Country</option>
-            <% countries.forEach(c => { %>
-                <option value="<%= c.country %>"> <%= c.country %> </option>
-            <% }) %>
-        
-        </select>
-        <!-- <input type="text" name="country" autocomplete="off"> -->
-        <!-- <input type="submit" value="Add New Country"> -->
-    </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <title>Travel Tips</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="bg">
+        <nav class="index-nav">
+          <% if (user) { %>
+          <a href="/logout">LOG OUT</a>
+          <% } else { %>
+          <a href="/auth/google"> LOG IN </a>
+          <% } %>
+        </nav>
+        <div class="row-cols-1">
+          <h1 class="text-center">Travel Tips</h1>
+
+          <form method="POST" action="/countries/show">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="country" onchange="this.form.submit()">
+              <option value="null">Select Country</option>
+              <% countries.forEach(c => { %>
+              <option value="<%= c.country %>"><%= c.country %></option>
+              <% }) %>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

@@ -1,22 +1,31 @@
 <%- include('../partials/header') %>  
-    <h1>Tips!</h1>
-    <div>
+    <div class="container-fluid">
+      <h1 style="text-align: center;">Travel Tips</h1>
         <% country.trip.forEach(t => { %>
-            <div>Posted by: <%= t.userName %> </div>
-            <div>City: <%= t.city %></div>
-            <div>Month: <%= t.month %> </div>
-            <div>Restaurant: <%= t.restaurant %> </div>
-            <div>Hotel: <%= t.hotel %> </div>
-            <div>Tips: <%= t.tip %> </div>
-            <div>
-                <% if (user && user._id.equals(t.user)) { %>
-                    <form action="/trips/<%= t._id %>?_method=DELETE" method="POST">
-                        <button type="submit">DELETE POST</button>
-                    </form>
-                    <a href="/trips/<%= t._id %>/edit">EDIT POST</a>
-                <% } %>     
+            <div class="row">
+                <div class="col-md-4 offset-sm-1">
+                    <div class="show-tip">
+                        <div>Posted by: <%= t.userName %> </div>
+                        <div>City: <%= t.city %></div>
+                        <div>Month: <%= t.month %> </div>
+                        <div>Restaurant: <%= t.restaurant %> </div>
+                        <div>Hotel: <%= t.hotel %> </div>
+                        <div>Tips: <%= t.tip %> </div>
+                        <div>
+                            <% if (user && user._id.equals(t.user)) { %>
+                                <form action="/trips/<%= t._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn btn-secondary">DELETE POST</button>
+                                    <a type="button" class="btn btn-secondary" href="/trips/<%= t._id %>/edit">EDIT POST</a>
+                                </form>
+                                
+                            <% } %>
+                        </div>
+                    </div>     
+                    <hr></hr>
+                </div>
             </div>
         <% }) %>
+        </div>
     </div>
         
 <%- include('../partials/footer') %> 
