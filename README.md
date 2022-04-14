@@ -22,3 +22,4 @@ Node.js | Express | Mongoose | MongoDB | EJS | Passport | Bootstrab | CSS | Java
 ## Things to imporve.  
 1. Feature that user can upload pictures.
 2. Features that other users can add likes and add comments.
+3. 
