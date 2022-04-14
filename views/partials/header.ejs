@@ -13,6 +13,7 @@
 <body>
     <div class="bg-show">
     <nav class="all-nav">
+        <a id="home" href="/countries">HOME</a>
         <% if (user) { %>
             <a href="/countries/<%= country._id %>/trips/new">Add New Trip</a>
             <a href="/logout">LOG OUT</a>
