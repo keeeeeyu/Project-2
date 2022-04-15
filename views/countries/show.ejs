@@ -5,12 +5,12 @@
             <div class="row">
                 <div class="col-md-4 offset-sm-1">
                     <div class="show-tip">
-                        <div>Posted by: <%= t.userName %> </div>
-                        <div>City: <%= t.city %></div>
-                        <div>Month: <%= t.month %> </div>
-                        <div>Restaurant: <%= t.restaurant %> </div>
-                        <div>Hotel: <%= t.hotel %> </div>
-                        <div>Tips: <%= t.tip %> </div>
+                        <div>Posted by:&ensp; <%= t.userName %> </div>
+                        <div>City:&ensp; <%= t.city %></div>
+                        <div>Month:&ensp; <%= t.month %> </div>
+                        <div>Restaurant:&ensp; <%= t.restaurant %> </div>
+                        <div>Hotel:&ensp; <%= t.hotel %> </div>
+                        <div>Tips:&ensp; <%= t.tip %> </div>
                         <div>
                             <% if (user && user._id.equals(t.user)) { %>
                                 <form action="/trips/<%= t._id %>?_method=DELETE" method="POST">

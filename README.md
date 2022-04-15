@@ -1,9 +1,12 @@
 # Project 2
 
 ## Travel Tips
-As a travel lover, I always look for tips before the trip.
-**Travel Tips** allows you to share your recommendations and tips of countries you already have visited. I want **Travel Tips** to be a useful resource for travelers.
+**Travel Tips** app allows users to share their recommendations and tips of countries that they already have visited.
 
+![alt text](https://i.imgur.com/iGnhVVW.png)
+![alt text](https://i.imgur.com/zxQBC8u.png)
+![alt text](https://i.imgur.com/YfuMi4j.png)
+![alt text](https://i.imgur.com/cNWlzMU.png)
 ## Wireframe
 
 https://whimsical.com/project-2-wireframe-WfdAEA7nCyVABjRtAAjsj8
@@ -17,8 +20,9 @@ https://whimsical.com/project-2-erd-5JXHTM4jLBeNHRjYwC84Kx
 https://whimsical.com/project-2-wireframe-WfdAEA7nCyVABjRtAAjsj8
 
 ## Technologies Used:  
-Node.js | Express | Mongoose | MongoDB | EJS | Passport | Bootstrab | CSS | JavaScript.
+Node.js | Express | Mongoose | MongoDB | EJS | Passport | Bootstrab | CSS | JavaScript | Oauth | Heroku.
 
+## Deployment
 https://travel-tipskee.herokuapp.com/
 
 ## Things to imporve.  
