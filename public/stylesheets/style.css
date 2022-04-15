@@ -76,6 +76,8 @@ label {
 
 .tip-text {
   vertical-align: top;
+  width: 20em;
+  height: 10rem;
 }
 
 #add-btn {

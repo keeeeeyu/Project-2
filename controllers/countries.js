@@ -4,7 +4,6 @@ const Country = require('../models/country');
 
 module.exports = {
     index,
-    create,
     show,
     search
 }
@@ -18,18 +17,6 @@ function index(req, res) {
         })
     })
 };
-
-
-function create(req, res) {
-    const country = new Country(req.body);
-    country.save(function(err) {
-        if(err) return res.redirect('/countries');
-
-    })
-    res.redirect('/countries')
-  
-}
-
 
 function show(req, res) {
     console.log(req.body)
